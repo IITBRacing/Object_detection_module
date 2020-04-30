@@ -1,6 +1,7 @@
 
 import numpy as np
 import h5py
+import matplotlib.pyplot as plt
 
 train_dataset = h5py.File('./datasets/train_catvnoncat.h5', "r")
 train_set_x_orig = np.array(train_dataset["train_set_x"][:])  # your train set features
@@ -34,3 +35,9 @@ print()
 print(test_set_x_orig.shape,"This has 50 images each of size 64x 64 and 3 reprensents RGB")
 print()
 print(test_set_y_orig.shape,"This has information of each image as cat or non cat  --> 0 means non cat image and 1 means cat image")
+
+
+# Example of a picture
+index = 10
+plt.imshow(train_set_x_orig[index])
+print ("y = " + str(train_set_y_orig[:, index]) + ", it's a '" + classes[np.squeeze(train_set_y_orig[:, index])].decode("utf-8") +  "' picture.")
