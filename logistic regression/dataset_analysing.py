@@ -40,4 +40,4 @@ print(test_set_y_orig.shape,"This has information of each image as cat or non ca
 # Example of a picture
 index = 10
 plt.imshow(train_set_x_orig[index])
-print ("y = " + str(train_set_y_orig[:, index]) + ", it's a '" + classes[np.squeeze(train_set_y_orig[:, index])].decode("utf-8") +  "' picture.")
+print ("y = " + str(train_set_y_orig[index]) + ", it's a '" + classes[np.squeeze(train_set_y_orig[index])].decode("utf-8") +  "' picture.")
